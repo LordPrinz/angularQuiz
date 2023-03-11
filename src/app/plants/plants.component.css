@@ -1,0 +1,12 @@
+.plant-container {
+    text-align: center;
+    background-color: #ececec;
+    padding: 30px 30px;
+    min-height: 40vh;
+    border-radius: 2%;
+}
+
+.plant-container>h3 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}

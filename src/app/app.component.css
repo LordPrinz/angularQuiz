@@ -5,11 +5,20 @@
     width: 66%;
     margin: 0 auto;
     margin-top: 64px;
+    max-width: 1280px;
 }
 
 .answers {
     display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    margin-top: 60px;
+    gap: 8%;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+app-animals {
+    flex: 1
+}
+
+app-plants {
+    flex: 1;
 }
