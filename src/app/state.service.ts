@@ -8,6 +8,10 @@ import { Subject } from 'rxjs';
 export class StateService {
   private stateSubject = new Subject<optionType[]>();
   state$ = this.stateSubject.asObservable();
+
+  private modeStateSubject = new Subject<boolean>();
+  modeState$ = this.modeStateSubject.asObservable();
+
   public defaultState: optionType[] = [
     {
       id: 0,
@@ -37,9 +41,18 @@ export class StateService {
 
   constructor() {
     this.stateSubject.next(this.defaultState);
+    this.modeStateSubject.next(false);
   }
 
   setState(newState: optionType[]) {
     this.stateSubject.next(newState);
+  }
+
+  activateMode() {
+    this.modeStateSubject.next(true);
+  }
+
+  deactivateMode() {
+    this.modeStateSubject.next(false);
   }
 }
