@@ -6,16 +6,12 @@ import { StateService } from './../state.service';
   selector: 'app-animals',
   templateUrl: './animals.component.html',
   styleUrls: ['./animals.component.css'],
-  template: `{{ state.myGlobalState }}`,
+  template: `{{ state.options }}`,
 })
 export class AnimalsComponent implements OnInit {
   public animals: optionType[] | null = null;
 
-  constructor(private state: StateService) {
-    this.animals = state.options.filter(
-      (option) => (option.selectedTo = 'animal')
-    );
-  }
+  constructor(private state: StateService) {}
 
   ngOnInit(): void {}
 }

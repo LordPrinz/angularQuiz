@@ -7,7 +7,7 @@ import { StateService } from '../state.service';
   selector: 'app-questions',
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.css'],
-  template: `{{ state.myGlobalState }}`,
+  template: `{{ state.options }}`,
 })
 export class QuestionsComponent implements OnInit {
   public currentThing: optionType | null = null;
