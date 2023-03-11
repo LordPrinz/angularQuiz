@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { PlantsComponent } from './plants/plants.component';
+import { CheckComponent } from './check/check.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuestionsComponent,
     AnimalsComponent,
-    PlantsComponent
+    PlantsComponent,
+    CheckComponent
   ],
   imports: [
     BrowserModule
