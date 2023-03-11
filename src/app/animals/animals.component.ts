@@ -10,11 +10,16 @@ import { StateService } from './../state.service';
 export class AnimalsComponent implements OnInit {
   public animals: optionType[] | null = null;
 
+  public isCheckmode: boolean = false;
+
   constructor(private state: StateService) {}
 
   ngOnInit(): void {
     this.state.state$.subscribe((newState) => {
       this.animals = newState.filter((thing) => thing.selectedTo == 'animal');
+    });
+    this.state.modeState$.subscribe((newState) => {
+      this.isCheckmode = newState;
     });
   }
 }
