@@ -18,7 +18,7 @@ export class ScoreComponent implements OnInit {
   ngOnInit(): void {
     this.state.modeState$.subscribe((state) => {
       this.isCheckMode = state;
-
+      this.counter = 0;
       if (!state) {
         return;
       }
