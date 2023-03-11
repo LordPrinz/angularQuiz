@@ -6,7 +6,6 @@ import { StateService } from './../state.service';
   selector: 'app-animals',
   templateUrl: './animals.component.html',
   styleUrls: ['./animals.component.css'],
-  template: `{{ state.options }}`,
 })
 export class AnimalsComponent implements OnInit {
   public animals: optionType[] | null = null;
