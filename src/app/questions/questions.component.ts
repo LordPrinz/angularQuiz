@@ -7,36 +7,45 @@ import { StateService } from '../state.service';
   selector: 'app-questions',
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.css'],
-  template: `{{ state.options }}`,
 })
 export class QuestionsComponent implements OnInit {
   public currentThing: optionType | null = null;
+  public currentState: optionType[] | null = null;
 
-  // drawNext() {
-  //   const notSelected = this.state.options.filter(
-  //     (option) => !option.selectedTo
-  //   );
-  //   const index = randomIndex(notSelected.length);
-  //   this.currentThing = notSelected[index];
-  // }
+  drawNext() {
+    const notSelected = this.currentState!.filter(
+      (option) => !option.selectedTo
+    );
+    const index = randomIndex(notSelected.length);
+    this.currentThing = notSelected[index];
+  }
 
-  // setAsAnimal() {
-  //   const index = this.currentThing?.id!;
-  //   this.state.options[index].selectedTo = 'animal';
+  setAsAnimal() {
+    const index = this.currentThing?.id!;
+    this.currentState![index].selectedTo = 'animal';
+    this.state.setState(this.currentState!);
 
-  //   this.drawNext();
-  // }
+    this.drawNext();
+  }
 
-  // setAsPlant() {
-  //   const index = this.currentThing?.id!;
-  //   this.state.options[index].selectedTo = 'plant';
+  setAsPlant() {
+    const index = this.currentThing?.id!;
+    this.currentState![index].selectedTo = 'plant';
+    this.state.setState(this.currentState!);
 
-  //   this.drawNext();
-  // }
+    this.drawNext();
+  }
 
-  // constructor(private state: StateService) {
-  //   this.drawNext();
-  // }
+  constructor(private state: StateService) {
+    this.currentState = this.state.defaultState;
+    this.drawNext();
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.state.state$.subscribe((newState) => {
+      this.currentState = newState;
+
+      this.drawNext();
+    });
+  }
 }

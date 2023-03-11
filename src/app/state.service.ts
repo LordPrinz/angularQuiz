@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 export class StateService {
   private stateSubject = new Subject<optionType[]>();
   state$ = this.stateSubject.asObservable();
-  private defaultState: optionType[] = [
+  public defaultState: optionType[] = [
     {
       id: 0,
       name: 'Słoń',
