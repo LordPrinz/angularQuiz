@@ -3,8 +3,12 @@
     <div class="plant" *ngFor="let plant of plants">
         {{ plant?.name }}
         <div *ngIf="isCheckmode">
-            <div *ngIf="plant.selectedTo !== plant.correct">X</div>
-            <div *ngIf="plant.selectedTo === plant.correct">C</div>
+            <div *ngIf="plant.selectedTo !== plant.correct">
+                <div class="incorrect"></div>
+            </div>
+            <div *ngIf="plant.selectedTo === plant.correct">
+                <div class="correct"></div>
+            </div>
         </div>
     </div>
 </div>

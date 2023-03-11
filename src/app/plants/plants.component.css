@@ -16,8 +16,69 @@
     padding: 20px 0;
     margin: 2px;
     border-top: 1px solid #7d7d7d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .plant:last-child {
     border-bottom: 1px solid #7d7d7d;
+}
+
+.incorrect {
+    width: 22px;
+    height: 22px;
+    position: relative;
+    margin-left: 20px
+}
+
+.incorrect:after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+    transform: rotate(45deg);
+}
+
+.incorrect:before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+    transform: rotate(135deg);
+}
+
+.correct {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-left: 25px
+}
+
+.correct:after {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: green;
+    transform: rotate(30deg);
+}
+
+.correct:before {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 2px;
+    height: 50%;
+    background-color: green;
+    transform: rotate(130deg) translate(6px, 6px);
 }
