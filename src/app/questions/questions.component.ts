@@ -12,31 +12,31 @@ import { StateService } from '../state.service';
 export class QuestionsComponent implements OnInit {
   public currentThing: optionType | null = null;
 
-  drawNext() {
-    const notSelected = this.state.options.filter(
-      (option) => !option.selectedTo
-    );
-    const index = randomIndex(notSelected.length);
-    this.currentThing = notSelected[index];
-  }
+  // drawNext() {
+  //   const notSelected = this.state.options.filter(
+  //     (option) => !option.selectedTo
+  //   );
+  //   const index = randomIndex(notSelected.length);
+  //   this.currentThing = notSelected[index];
+  // }
 
-  setAsAnimal() {
-    const index = this.currentThing?.id!;
-    this.state.options[index].selectedTo = 'animal';
+  // setAsAnimal() {
+  //   const index = this.currentThing?.id!;
+  //   this.state.options[index].selectedTo = 'animal';
 
-    this.drawNext();
-  }
+  //   this.drawNext();
+  // }
 
-  setAsPlant() {
-    const index = this.currentThing?.id!;
-    this.state.options[index].selectedTo = 'plant';
+  // setAsPlant() {
+  //   const index = this.currentThing?.id!;
+  //   this.state.options[index].selectedTo = 'plant';
 
-    this.drawNext();
-  }
+  //   this.drawNext();
+  // }
 
-  constructor(private state: StateService) {
-    this.drawNext();
-  }
+  // constructor(private state: StateService) {
+  //   this.drawNext();
+  // }
 
   ngOnInit(): void {}
 }
