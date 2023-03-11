@@ -1,0 +1,12 @@
+button {
+    font-size: 28px;
+    padding: 20px 30px;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+}
+
+div {
+    text-align: center;
+    margin-top: 48px;
+}
