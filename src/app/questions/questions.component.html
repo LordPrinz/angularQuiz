@@ -1,6 +1,6 @@
-<div class="question-container">
+<div *ngIf="currentThing" class="question-container">
     <div class="question">
-        <span>{{ currentThing?.name }}</span>
+        <span>{{ currentThing.name }}</span>
 
         <div>
             <button (click)="setAsAnimal()">Animal</button>
