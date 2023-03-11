@@ -1,12 +1,23 @@
 .animal-container {
     text-align: center;
     background-color: #ececec;
-    padding: 30px 30px;
+    padding: 50px 30px;
     min-height: 40vh;
     border-radius: 2%;
 }
 
 .animal-container>h3 {
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.animal {
+    font-size: 24px;
+    padding: 20px 0;
+    margin: 2px;
+    border-top: 1px solid #7d7d7d;
+}
+
+.animal:last-child {
+    border-bottom: 1px solid #7d7d7d;
 }
