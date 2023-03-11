@@ -1,10 +1,8 @@
 <div *ngIf="currentThing" class="question-container">
-    <div class="question">
-        <span>{{ currentThing.name }}</span>
+    <span class="word">{{ currentThing.name }}</span>
 
-        <div>
-            <button (click)="setAsAnimal()">Animal</button>
-            <button (click)="setAsPlant()">Plant</button>
-        </div>
+    <div class="buttons">
+        <button (click)="setAsAnimal()">Animal</button>
+        <button (click)="setAsPlant()">Plant</button>
     </div>
 </div>

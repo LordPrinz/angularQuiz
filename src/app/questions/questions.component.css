@@ -1,3 +1,30 @@
 .question-container {
-    background-color: #eee;
+    /* background-color: #eee; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.buttons {
+    display: flex;
+    gap: 64px;
+}
+
+.buttons>button {
+    font-size: 28px;
+    padding: 20px 30px;
+    border-radius: 99px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* .buttons>button:nth-last-child() {
+    background-color: #e9b167;
+} */
+
+.word {
+    font-size: 48px;
+    font-weight: bold;
 }
