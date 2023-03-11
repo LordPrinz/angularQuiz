@@ -12,24 +12,30 @@ import { StateService } from '../state.service';
 export class QuestionsComponent implements OnInit {
   public currentThing: optionType | null = null;
 
-  drawNext(state: StateService) {
-    const notSelected = state.options.filter((option) => !option.selectedTo);
-    const index = randomIndex(notSelected.length - 1);
+  drawNext() {
+    const notSelected = this.state.options.filter(
+      (option) => !option.selectedTo
+    );
+    const index = randomIndex(notSelected.length);
     this.currentThing = notSelected[index];
   }
 
   setAsAnimal() {
-    console.log('XD');
+    const index = this.currentThing?.id!;
+    this.state.options[index].selectedTo = 'animal';
+
+    this.drawNext();
   }
 
-  setAsPlant() {}
+  setAsPlant() {
+    const index = this.currentThing?.id!;
+    this.state.options[index].selectedTo = 'plant';
+
+    this.drawNext();
+  }
 
   constructor(private state: StateService) {
-    const notSelected = state.options.filter((option) => !option.selectedTo);
-
-    const index = randomIndex(notSelected.length);
-    console.log(index);
-    this.currentThing = notSelected[index];
+    this.drawNext();
   }
 
   ngOnInit(): void {}
