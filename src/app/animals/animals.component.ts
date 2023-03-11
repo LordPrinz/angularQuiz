@@ -13,5 +13,9 @@ export class AnimalsComponent implements OnInit {
 
   constructor(private state: StateService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.state.state$.subscribe((newState) => {
+      this.animals = newState.filter((thing) => thing.selectedTo == 'animal');
+    });
+  }
 }
