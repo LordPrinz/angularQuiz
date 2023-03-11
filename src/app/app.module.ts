@@ -6,6 +6,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { PlantsComponent } from './plants/plants.component';
 import { CheckComponent } from './check/check.component';
+import { ScoreComponent } from './score/score.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CheckComponent } from './check/check.component';
     QuestionsComponent,
     AnimalsComponent,
     PlantsComponent,
-    CheckComponent
+    CheckComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule
