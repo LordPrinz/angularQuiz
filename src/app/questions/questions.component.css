@@ -1,4 +1,3 @@
 .question-container {
-    border: 1px solid #ccc;
-    display: inline-flex;
+    background-color: #eee;
 }
