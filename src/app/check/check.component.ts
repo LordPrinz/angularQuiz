@@ -9,7 +9,7 @@ import { StateService } from '../state.service';
 })
 export class CheckComponent implements OnInit {
   public isAllSelected: boolean = false;
-
+  public isCheckmode: boolean = false;
   public stateTemp: optionType[] | null = null;
 
   activateCheckMode() {
@@ -32,6 +32,10 @@ export class CheckComponent implements OnInit {
     this.state.state$.subscribe((newState) => {
       this.isAllSelected = !newState.find((item) => !item.selectedTo);
       this.stateTemp = newState;
+    });
+
+    this.state.modeState$.subscribe((newState) => {
+      this.isCheckmode = newState;
     });
   }
 }

@@ -1,4 +1,6 @@
 <div *ngIf="isAllSelected">
-    <button (click)="activateCheckMode()">Check Answers!</button>
-    <button (click)="reset()">Reset</button>
+    <button *ngIf="!isCheckmode" (click)="activateCheckMode()">
+    Check Answers!
+  </button>
+    <button *n*gIf="isCheckmode" (click)="reset()">Reset</button>
 </div>
