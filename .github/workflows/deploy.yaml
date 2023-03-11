@@ -20,7 +20,7 @@ jobs:
         run: npm install
       - name: Build and Deploy
         run: |
-          ng build --prod --base-href https://LordPrinz.github.io/angularQuiz/
+          ng build --prod --base-href "https://LordPrinz.github.io/angularQuiz/"
           npx angular-cli-ghpages --dir=dist/projekt
         env:
           CI: true
