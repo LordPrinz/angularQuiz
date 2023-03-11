@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { randomIndex } from 'src/utils/random';
+import { optionType } from 'types/optionType';
 import { StateService } from '../state.service';
 
 @Component({
@@ -8,10 +10,14 @@ import { StateService } from '../state.service';
   template: `{{ state.myGlobalState }}`,
 })
 export class QuestionsComponent implements OnInit {
-  public currentThing = null;
+  public currentThing: optionType | null = null;
 
   constructor(private state: StateService) {
     const notSelected = state.options.filter((option) => !option.selectedTo);
+
+    const index = randomIndex(notSelected.length - 1);
+
+    this.currentThing = notSelected[index];
   }
 
   ngOnInit(): void {}
