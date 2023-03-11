@@ -1,4 +1,10 @@
 <div class="plant-container">
     <h3>Plant</h3>
-    <div class="plant" *ngFor="let plant of plants">{{ plant?.name }}</div>
+    <div class="plant" *ngFor="let plant of plants">
+        {{ plant?.name }}
+        <div *ngIf="isCheckmode">
+            <div *ngIf="plant.selectedTo !== plant.correct">X</div>
+            <div *ngIf="plant.selectedTo === plant.correct">C</div>
+        </div>
+    </div>
 </div>
