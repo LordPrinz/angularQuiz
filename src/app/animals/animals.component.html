@@ -3,8 +3,12 @@
     <div class="animal" *ngFor="let animal of animals">
         {{ animal?.name }}
         <div *ngIf="isCheckmode">
-            <div *ngIf="animal.selectedTo !== animal.correct">X</div>
-            <div *ngIf="animal.selectedTo === animal.correct">C</div>
+            <div *ngIf="animal.selectedTo !== animal.correct">
+                <div class="incorrect"></div>
+            </div>
+            <div *ngIf="animal.selectedTo === animal.correct">
+                <div class="correct"></div>
+            </div>
         </div>
     </div>
 </div>
