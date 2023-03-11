@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { optionType } from 'types/optionType';
 import { StateService } from './../state.service';
 
 @Component({
@@ -8,7 +9,13 @@ import { StateService } from './../state.service';
   template: `{{ state.myGlobalState }}`,
 })
 export class AnimalsComponent implements OnInit {
-  constructor(private state: StateService) {}
+  public animals: optionType[] | null = null;
+
+  constructor(private state: StateService) {
+    this.animals = state.options.filter(
+      (option) => (option.selectedTo = 'animal')
+    );
+  }
 
   ngOnInit(): void {}
 }
