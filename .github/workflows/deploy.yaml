@@ -13,13 +13,15 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '16.x'
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
       - name: Install Dependencies
         run: npm install
-      - name: Build
-        run: ng build --base-href https://LordPrinz.github.io/angularQuiz/
-      - name: Deploy
-        run: npx angular-cli-ghpages --dir=dist/angularQuiz --no-silent
+      - name: Build and Deploy
+        run: |
+          ng build --prod --base-href https://LordPrinz.github.io/angularQuiz/
+          npx angular-cli-ghpages --dir=dist/projekt
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
