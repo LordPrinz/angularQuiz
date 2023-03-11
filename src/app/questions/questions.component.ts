@@ -11,12 +11,19 @@ import { StateService } from '../state.service';
 })
 export class QuestionsComponent implements OnInit {
   public currentThing: optionType | null = null;
+  public currentState = null;
+
+  drawNext(state: StateService) {
+    const notSelected = state.options.filter((option) => !option.selectedTo);
+    const index = randomIndex(notSelected.length - 1);
+    this.currentThing = notSelected[index];
+  }
 
   constructor(private state: StateService) {
     const notSelected = state.options.filter((option) => !option.selectedTo);
 
-    const index = randomIndex(notSelected.length - 1);
-
+    const index = randomIndex(notSelected.length);
+    console.log(index);
     this.currentThing = notSelected[index];
   }
 
