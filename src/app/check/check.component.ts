@@ -9,7 +9,9 @@ import { StateService } from '../state.service';
 export class CheckComponent implements OnInit {
   public isAllSelected: boolean = false;
 
-  activateCheckMode() {}
+  activateCheckMode() {
+    this.state.activateMode();
+  }
 
   constructor(private state: StateService) {}
   ngOnInit(): void {
